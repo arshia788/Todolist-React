@@ -19,7 +19,6 @@ body{
 
 .layout{
   width: 500px;
-  height: 300px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border-radius: 5px;
   padding: 15px 10px;
@@ -31,3 +30,36 @@ body{
   background: navy;
   color: #fff;
 }
+
+.form{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.form div{
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  width: 60%;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.form div input{
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 5px;
+}
+
+.form button{
+  color: #fff;
+  padding: 5px 10px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: seagreen;
+  border-radius: 3px;
+}
+
+

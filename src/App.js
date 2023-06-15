@@ -10,12 +10,28 @@ const App = () => {
 
   const [text, setText]= useState('');
   const [todos, setTodos]= useState([]);
+  console.log(todos);
+
+  const submitHandler=(e)=>{
+    e.preventDefault()
+
+    setTodos([...todos, {desc:text}])
+
+  }
 
   return (
     <Layout>
       <Header />
-      <InputPart />
-      <Lists />
+      
+      <InputPart 
+      submitHandler={submitHandler}
+      text={text}
+      change={e=> setText(e.target.value)}
+      />
+
+      <Lists 
+      todos={todos}
+      />
 
     </Layout>
   );
