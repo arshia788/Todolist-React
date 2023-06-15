@@ -1,6 +1,6 @@
 import React from 'react';
 
-const InputPart = ({submitHandler,text, change}) => {
+const InputPart = ({submitHandler,text, change, erros}) => {
 
     return (
         <form 
@@ -12,6 +12,8 @@ const InputPart = ({submitHandler,text, change}) => {
                 placeholder='add your thoughts...'
                 value={text} onChange={change}/>
             </div>
+
+            {erros && <span style={{color:'crimson'}}>{erros}</span>}
 
             <button type='submit'>add</button>
             

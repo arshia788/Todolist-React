@@ -10,12 +10,29 @@ const App = () => {
 
   const [text, setText]= useState('');
   const [todos, setTodos]= useState([]);
+  const [erros, setErros]= useState('');
+
   console.log(todos);
+  console.log(erros);
 
   const submitHandler=(e)=>{
     e.preventDefault()
+    setText('')
 
-    setTodos([...todos, {id:Date.now(), desc:text, check:false}])
+    if(!text.length){
+      setErros('fill the input !!!')
+      return todos;
+    }else{
+      setErros('')
+    }
+    
+    if(!todos.find(item=> item.desc === text)){
+      setTodos([...todos, {id:Date.now(), desc:text, check:false}])
+    
+    }else{
+      alert('you have this item')
+    }
+    
   }
 
   const delHandler=(id)=>{
@@ -31,6 +48,7 @@ const App = () => {
       submitHandler={submitHandler}
       text={text}
       change={e=> setText(e.target.value)}
+      erros={erros}
       />
 
       <Lists 
