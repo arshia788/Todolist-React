@@ -6,17 +6,27 @@ import { FaTrashAlt } from "react-icons/fa";
 
 
 
-const ListCarts = ({data, delHandler, checkHandler}) => {
+const ListCarts = ({ data, delHandler, checkHandler }) => {
     return (
-        <div className='cart'>
-            {data.desc}
+        <div
+            className={`${data.check ? 'cartActive' : 'cartNotActive'}`}>
+            
+                {data.check ?<del style={{color:'#fff'}}>{data.desc}</del> : <span>{data.desc}</span>}
 
-            <div>
-                <button onClick={()=> checkHandler(data.id)}>
-                    <FaCheckCircle />
-                </button>
+            <div >
 
-                <button onClick={()=> delHandler(data.id)}>
+                {
+                    data.check ?
+                        <button onClick={() => checkHandler(data.id)}>
+                            <FaRedo />
+                        </button>
+                        :
+                        <button onClick={() => checkHandler(data.id)}>
+                            <FaCheckCircle />
+                        </button>
+                }
+
+                <button onClick={() => delHandler(data.id)}>
                     <FaTrashAlt />
                 </button>
             </div>
