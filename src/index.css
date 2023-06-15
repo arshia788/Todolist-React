@@ -25,17 +25,18 @@ body{
 }
 
 .header{
-  border-radius: 5px;
+  border-radius: 3px;
   text-align: center;
   background: navy;
   color: #fff;
+  margin-bottom: 20px;
 }
 
 .form{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 20px 0;
+  margin-bottom: 20px ;
 }
 
 .form div{
@@ -49,7 +50,7 @@ body{
   border: none;
   outline: none;
   background: transparent;
-  padding: 5px;
+  padding: 6px;
 }
 
 .form button{
@@ -62,4 +63,30 @@ body{
   border-radius: 3px;
 }
 
+.cart{
+  margin: 20px 0;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  padding: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart div button{
+  border: none;
+  background: transparent;
+  outline: none;
+  margin: 0 13px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.cart div button:nth-child(1){
+  color: seagreen;
+}
+
+
+.cart div button:nth-child(2){
+  color: crimson;
+}
 
