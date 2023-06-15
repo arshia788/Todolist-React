@@ -6,13 +6,13 @@ import { FaTrashAlt } from "react-icons/fa";
 
 
 
-const ListCarts = ({data, delHandler}) => {
+const ListCarts = ({data, delHandler, checkHandler}) => {
     return (
         <div className='cart'>
             {data.desc}
 
             <div>
-                <button>
+                <button onClick={()=> checkHandler(data.id)}>
                     <FaCheckCircle />
                 </button>
 

@@ -11,9 +11,8 @@ const App = () => {
   const [text, setText]= useState('');
   const [todos, setTodos]= useState([]);
   const [erros, setErros]= useState('');
-
   console.log(todos);
-  console.log(erros);
+
 
   const submitHandler=(e)=>{
     e.preventDefault()
@@ -40,6 +39,23 @@ const App = () => {
     setTodos(newTodos)
   }
 
+  const checkHandler=(id)=>{
+
+    const indexI= todos.findIndex(item=> item.id === id)
+    console.log(indexI);
+
+    const newTodosCopy= [...todos];
+
+    newTodosCopy[indexI]={
+      id:todos[indexI].id,
+      desc:todos[indexI].desc,
+      check:!todos[indexI].check,
+    }
+    
+    setTodos(newTodosCopy)
+    
+  }
+
   return (
     <Layout>
       <Header />
@@ -52,6 +68,7 @@ const App = () => {
       />
 
       <Lists 
+      checkHandler={checkHandler}
       delHandler={delHandler}
       todos={todos}
       />

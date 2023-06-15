@@ -2,7 +2,7 @@ import React from 'react';
 
 import ListCarts from './ListCarts';
 
-const Lists = ({todos, delHandler}) => {
+const Lists = ({todos, delHandler, checkHandler}) => {
     return (
         <div>
             {
@@ -10,6 +10,7 @@ const Lists = ({todos, delHandler}) => {
                 todos.map(item=> <ListCarts key={item.id} 
                 data={item} 
                 delHandler={delHandler}
+                checkHandler={checkHandler}
                 />)
                 :
                 <div style={{background:'crimson', 
