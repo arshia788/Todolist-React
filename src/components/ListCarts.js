@@ -6,7 +6,7 @@ import { FaTrashAlt } from "react-icons/fa";
 
 
 
-const ListCarts = ({data}) => {
+const ListCarts = ({data, delHandler}) => {
     return (
         <div className='cart'>
             {data.desc}
@@ -16,7 +16,7 @@ const ListCarts = ({data}) => {
                     <FaCheckCircle />
                 </button>
 
-                <button>
+                <button onClick={()=> delHandler(data.id)}>
                     <FaTrashAlt />
                 </button>
             </div>

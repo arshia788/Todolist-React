@@ -15,14 +15,18 @@ const App = () => {
   const submitHandler=(e)=>{
     e.preventDefault()
 
-    setTodos([...todos, {desc:text}])
+    setTodos([...todos, {id:Date.now(), desc:text, check:false}])
+  }
 
+  const delHandler=(id)=>{
+    const newTodos= todos.filter(item=> item.id !== id)
+    setTodos(newTodos)
   }
 
   return (
     <Layout>
       <Header />
-      
+
       <InputPart 
       submitHandler={submitHandler}
       text={text}
@@ -30,6 +34,7 @@ const App = () => {
       />
 
       <Lists 
+      delHandler={delHandler}
       todos={todos}
       />
 

@@ -2,12 +2,15 @@ import React from 'react';
 
 import ListCarts from './ListCarts';
 
-const Lists = ({todos}) => {
+const Lists = ({todos, delHandler}) => {
     return (
         <div>
             {
                 todos.length ?
-                todos.map(item=> <ListCarts key={item.id} data={item} />)
+                todos.map(item=> <ListCarts key={item.id} 
+                data={item} 
+                delHandler={delHandler}
+                />)
                 :
                 <div style={{background:'crimson', 
                 padding:'3px',
